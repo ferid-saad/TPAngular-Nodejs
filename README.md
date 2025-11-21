@@ -34,3 +34,6 @@ Application web full-stack développée avec Angular pour le frontend et Node.js
 ├── backend/ # API Node.js/Express
 │ ├── routes/ # Routes de l'API
 │ ├── models/ # Modèles de données```
+```
+## 📝 Auteur
+Férid Saad - GitHub
