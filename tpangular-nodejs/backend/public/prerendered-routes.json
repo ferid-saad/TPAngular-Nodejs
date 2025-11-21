@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/appareil",
+    "/appareils",
+    "/contact",
+    "/home",
+    "/login",
+    "/premier"
+  ]
+}
