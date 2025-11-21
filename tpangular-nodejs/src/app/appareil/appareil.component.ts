@@ -12,7 +12,9 @@ export class AppareilComponent {
   getStatus() {
     return this.appareilStatus; // Méthode qui retourne le statut actuel.
   }
-
+  getappareils() {
+    return this.appareilName;
+  }
   onAllumer() {
     this.appareilStatus = 'Allumé'; // Change le statut à "Allumé".
     console.log(`${this.appareilName} est maintenant ${this.appareilStatus}`); // Affiche un message dans la console.

@@ -45,8 +45,8 @@ export class AppComponent {
     this.appareilList[i].status = 'Allumé';
   }
 
-  OnEteindre(index: number) {
-    this.appareilList[index].status = 'Eteint';
+  OnEteindre(i: number) {
+    this.appareilList[i].status = 'Eteint';
   }
   appareilName = ''; // Variable liée à l'input
 

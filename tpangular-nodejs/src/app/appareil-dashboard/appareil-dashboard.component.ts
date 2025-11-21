@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppareilService } from '../services/appareil.service';
+import { Appareil } from '../models/appareil.model';
 
 @Component({
   selector: 'app-appareil-dashboard',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './appareil-dashboard.component.css'
 })
 export class AppareilDashboardComponent {
+
+
+  constructor(private appareilService: AppareilService) {}
+
 
 }

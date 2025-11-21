@@ -1,3 +1,6 @@
+<!--input type="text" [(ngModel)]="appareilName" /-->
+
+
 <!-- Navbar responsive -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
@@ -15,7 +18,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/appareil" routerLinkActive="active">Appareils</a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" routerLink="/Authentif" routerLinkActive="active">Login</a>
         </li>
       </ul>
@@ -36,17 +39,30 @@
       <button class="btn btn-warning w-80 mb-3">Retour</button>
       <h5>Actions sur tous les Appareils</h5>
       <button class="btn btn-success w-100 mb-2" [disabled]="isDisabled" (click)="onAllumerTout()">Allumer tout</button>
-      <button class="btn btn-danger w-100 mb-2" [disabled]="isDisabled" (click)="onEteindreTout()">Eteindre tout</button>
+      <button class="btn btn-danger w-100 mb-2" [disabled]="isDisabled" (click)="onEteindreTout()">Eteindre
+        tout</button>
     </div>
   </div>
 </div>
-<ul>
-  <li *ngFor="let appareil of appareilList">
-    {{ appareil.name }} - {{ appareil.status }} - <button class="btn btn-success w-10 mb-2" [disabled]="isDisabled" (click)="onAllumerTout()">Allumer </button> - <button class="btn btn-danger w-10 mb-2" [disabled]="isDisabled" (click)="onEteindreTout()">Eteint </button>
+
+
+<ul class="list-unstyled">
+  <li *ngFor="let appareil of appareilList; let i = index"
+      class="d-flex align-items-center my-2 border rounded-2 p-2"
+      [ngClass]="{'text-success': appareil.status === 'Allumé', 'text-danger': appareil.status === 'Eteint'}">
+
+    <span class="me-auto">
+      • {{ appareil.name }} - {{ appareil.status }}
+    </span>
+
+    <span class="d-inline-flex gap-2">
+      <button class="btn btn-success btn-sm" (click)="OnAllumer(i)">Allumer</button>
+      <button class="btn btn-danger  btn-sm" (click)="OnEteindre(i)">Éteindre</button>
+    </span>
   </li>
 </ul>
+
 
 <div class="mb-3">
   <input type="text" class="form-control" [(ngModel)]="appareilName" placeholder="Nom de l'appareil" />
 </div>
-
